@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensoriamento</title>
+    <!-- Biblioteca de gráficos --> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Regador inteligente</h1>
+
+    <h2>Dados do solo</h2>
+    <p id="monitor-umidade">Umidade instantânea: </p>
+    <p id="variacao">Variação de umidade: </p>
+    
+    <h3>Histórico de dados<h3>
+    <div id="grafico"></div>
+
+    <h2>Previsão do tempo</h2>
+    <div id="prev-tempo"></div>
+
+    <h2>Ações</h2>
+    <input type="checkbox" name="auto-irrigacao" id="auto-irrigacao">
+    Habilitar irrigação automática
+
+    <input id="irrigar" type="button" value="Irrigar">
+
+    <h2>Configurações</h2>
+    Volume de água por irrigação
+    <input type="number" name="qtd-agua" id="qtd-agua"> cm³
+    
+    <input id="salvar" type="button" value="Salvar alterações">
+    
+    <script src="./scripts/chartConfig.js"></script>
+    <script src="./scripts/chart.js"></script>
+    <script src="./scripts/prevTempo.js"></script>
+    <script src="./scripts/sensor.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
