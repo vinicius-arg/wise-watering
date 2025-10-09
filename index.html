@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensoriamento</title>
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <!-- Biblioteca de gráficos --> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Regador inteligente</h1>
+    <h1 class="barlow-condensed-extrabold">Regador inteligente</h1>
 
-    <h2>Dados do solo</h2>
-    <p id="monitor-umidade">Umidade instantânea: </p>
-    <p id="variacao">Variação de umidade: </p>
+    <div class="container">
+        <div class="card">
+            <h2>Dados do solo</h2>
+            <p id="monitor-umidade">Umidade instantânea: </p>
+            <p id="variacao">Variação de umidade: </p>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de dados<h2>
+            <div id="grafico"></div>
+        </div>
     
-    <h3>Histórico de dados<h3>
-    <div id="grafico"></div>
-
-    <h2>Previsão do tempo</h2>
-    <div id="prev-tempo"></div>
-
-    <h2>Ações</h2>
-    <input type="checkbox" name="auto-irrigacao" id="auto-irrigacao">
-    Habilitar irrigação automática
-
-    <input id="irrigar" type="button" value="Irrigar">
-
-    <h2>Configurações</h2>
-    Volume de água por irrigação
-    <input type="number" name="qtd-agua" id="qtd-agua"> cm³
-    
-    <input id="salvar" type="button" value="Salvar alterações">
+        <div class="card">
+            <h2>Ações</h2>
+            <input type="checkbox" name="auto-irrigacao" id="auto-irrigacao">
+            Habilitar irrigação automática
+        
+            <input id="irrigar" type="button" value="Irrigar">
+        </div>
+        
+        <div class="card">        
+            <h2>Configurações</h2>
+            Volume de água por irrigação
+            <input type="number" name="qtd-agua" id="qtd-agua"> cm³
+            
+            <input id="salvar" type="button" value="Salvar alterações">
+        </div>
+    </div>
     
     <script src="./scripts/chartConfig.js"></script>
     <script src="./scripts/chart.js"></script>
