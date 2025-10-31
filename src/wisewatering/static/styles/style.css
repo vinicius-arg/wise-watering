@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=BBH+Sans+Hegarty&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(109, 123, 139);
+    width: 100vw;
+}
+
+h1#app-name {
+    /* font-family: "BBH Sans Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    background: #d18f00;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 50%;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+input[type=button] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type=number] {
+    width: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 80%;
+    }
+  }

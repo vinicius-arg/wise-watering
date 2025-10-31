@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensoriamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/font.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <!-- Biblioteca de gráficos --> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 id="app-name">Wise Watering</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Dados do solo</h2>
+            <p>Umidade: </p>
+            <span id="monitor-umidade"></span>
+            <p>Variação de umidade: </p>
+            <span id="variacao"></span>
+        </div>
+        
+        <div class="card">
+            <h2>Histórico de dados<h2>
+            <div id="grafico">
+                <canvas></canvas>
+            </div>
+        </div>
+    
+        <div class="card">
+            <h2>Ações</h2>
+
+            <input id="irrigar" type="button" value="Irrigar">
+        </div>
+        
+        <div class="card">        
+            <h2>Configurações</h2>
+            <div class="config">
+                <input type="checkbox" name="auto-irrigacao" id="auto-irrigacao">
+                Habilitar irrigação automática
+            </div>
+        
+            <div class="config">
+                Usar
+                <input type="number" name="qtd-agua" id="qtd-agua"> cm³ por irrigação
+            </div>
+            
+            <input id="salvar" type="button" value="Salvar alterações">
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='scripts/sensor.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/chart.js') }}"></script>
+</body>
+</html>
