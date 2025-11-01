@@ -59,12 +59,9 @@ class ManipuladorSerial(Thread):
                     pacote = { "carga": self.sensor.obter_ultimo_pacote() }
                     self.__enviar_pro_servidor(pacote)
 
-                    # TODO sincronização por eventos
-
+                    # Um byte de 'ack' é enviado em conjunto para sincronização
                     pendente = self.__checar_acoes_pendentes()
-                    
-                    if pendente:
-                        self.__enviar_pro_atuador(pendente)
+                    self.__enviar_pro_atuador(pendente)
 
             except SerialException as e:
                 print(e)

@@ -11,6 +11,7 @@ class Pacote(ctypes.LittleEndianStructure):
 class Comando(ctypes.LittleEndianStructure):
     _pack_ = 1
     _fields_ = [
-        ("type", ctypes.c_uint16),
-        ("data", ctypes.c_char * TAM_CARGA)
+        ("type", ctypes.c_uint8),
+        ("data", ctypes.c_uint8),
+        ("ack", ctypes.c_uint8)
     ]

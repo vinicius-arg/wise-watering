@@ -10,7 +10,7 @@ body {
     justify-content: center;
     flex-direction: column;
     background: rgb(109, 123, 139);
-    width: 100vw;
+    width: calc(100vw - 30px);
 }
 
 h1#app-name {
@@ -24,9 +24,11 @@ h1#app-name {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 90%;
 }
 
 .card {
+    box-sizing: border-box;
     background: #d18f00;
     padding: 10px 20px;
     margin: 10px;

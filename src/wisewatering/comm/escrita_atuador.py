@@ -15,22 +15,33 @@ class Escrita:
         
         if status == 200:
             pacote = resposta.json()
-            return Escrita.json_to_bytes(pacote)
-
-        return {}
+            return Escrita.json_para_bytes(pacote)
+        else: # Montar pacote só com 'ack'
+            return Escrita.apenas_ack()
 
     @staticmethod
-    def json_to_bytes(pacote):
-        carga = pacote["data"].encode("ascii")
-        
+    def json_para_bytes(pacote):
         comando_struct = Comando()
+        carga = pacote["data"]
+        
+        if carga == "irrigar":
+            comando_struct.data = 1 # Código de operação
+
         comando_struct.type = 1 # Código para type "action"
-        ctypes.memmove(comando_struct.carga, carga, len(carga))
+        comando_struct.ack = 1 # Confirma recebimento de leitura
+
+        return bytes(comando_struct)
+
+
+    @staticmethod
+    def apenas_ack():
+        comando_struct = Comando()
+        comando_struct.ack = 1
 
         return bytes(comando_struct)
 
 
     @staticmethod
     def enviar_pro_atuador(serial, pacote):
-        serial.write(SOF)
+        # serial.write(SOF)
         serial.write(pacote)
